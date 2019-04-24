@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+	
+    public static void main(String[] args) {
+        int i = 4;
+        double d = 4.0;
+        String s = "HackerRank ";
+		
+        Scanner scan = new Scanner(System.in);
+//Code up to this point is provided with the problem.
+/* Declare second integer, double, and String variables. */
+        int myInt;
+        double myDouble;
+        String str;
+        /* Read and save an integer, double, and String to your variables.*/
+        myInt=scan.nextInt();
+        myDouble=scan.nextDouble();
+        String emptyLine=scan.nextLine(); //I used this empty line to read the space from the end of the double to the begining of the next line so that the next line can be read into the string str
+                str= scan.nextLine();
+        // Note: If you have trouble reading the entire String, please go back and review the Tutorial closely.
+        
+        /* Print the sum of both integer variables on a new line. */
+System.out.println(i+myInt);
+        /* Print the sum of the double variables on a new line. */
+        System.out.println(d+myDouble);
+        /* Concatenate and print the String variables on a new line; 
+        	the 's' variable above should be printed first. */
+        System.out.println(s+str);
+        //end of my code
+        scan.close();
+    }
+}
