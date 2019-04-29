@@ -1,0 +1,52 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        scanner.close();
+
+          /*the following if statement and the nested if statments will check the even numbers since they have more conditions. The following if statements will only run if the number is even. The final else statement would check for odd numbers.*/
+
+        if (n%2==0){ 
+
+          /* the first nested if statement checks for all even numbers from and inclusive of 2 and 5. 1 is an odd number so it's automatically exluded */
+
+            if(n<6){
+                System.out.println("Not Weird");
+            }
+
+           /* this else if checks for all even numbers from where the previous "if statement" left off and goes up to 21 */ 
+
+        else if(n<21){ 
+        System.out.println("Weird");
+        }
+        
+             /*
+             this else statement checks for all even numbers greater than 20 
+             */
+        else {
+
+            System.out.println("Not Weird");
+        }
+
+    }
+    /*
+This is the final else statment which is outside of the first if statment. Here  an else to checks for any number that isn't even.
+    */
+    else {
+          System.out.println("Weird");
+        }
+}
+}
