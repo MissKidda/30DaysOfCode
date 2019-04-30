@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc= new Scanner(System.in);
+        int T=sc.nextInt();//reads first input which is number of strings or array size
+        String[] strings= new String[T];//set array size to T
+
+        //loop through the strings and save them to the strings array
+         for( int i=0;i<T;i++){
+             strings[i]=sc.next();
+           
+         }
+    /*
+    next we loop through the new array of strings (temp), then loop through each string, holding the index of each character at j, then print the character at j
+    */
+    //first we loop through the array of strings
+        for(int temp=0;temp<T;temp++){
+
+          /*then we loop through the indexes of each string. Loop starts at 0 then increments by 2, so we get the even indexes */
+            for (int j=0;j<strings[temp].length();){
+              
+              System.out.print(strings[temp].charAt(j)); //charAt(j) gets the value of the index at j
+           j+=2;
+            }
+            //this prints a space between the even characters and the odd ones
+           System.out.print(" ");
+
+            /*this next loop is similar to the first but starts at 1 then increments by 2, therefore looping through the odd indexes */
+              for (int j=1; j<strings[temp].length();){
+                System.out.print(strings[temp].charAt(j));
+                 
+                  j+=2;
+              }  
+             
+             //this tells the program to start a new line for each string evaluated
+           System.out.println();
+            }
+        
+        sc.close();
+    }
+}
+
