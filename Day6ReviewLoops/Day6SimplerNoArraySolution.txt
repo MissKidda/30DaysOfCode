@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc= new Scanner(System.in);
+        int T=sc.nextInt();//reads first input which is number of strings 
+       
+         for( int i=0;i<T;i++){
+           String s=sc.next();
+           /*
+        Use StringBuilder to make two new strings that contain the even characters and the odd ones
+           */
+           StringBuilder evenChars=new StringBuilder();
+           StringBuilder oddChars=new StringBuilder();
+         
+    /*
+   next we loop through each string to find the even and odd indexes, then append the value at the index to the corresponding string
+   */
+
+        for(int j=0;j<s.length();j++){
+            if(j%2==0){
+                evenChars.append(s.charAt(j));
+            }
+            else{
+                oddChars.append(s.charAt(j));
+            }
+        }
+         System.out.print(evenChars+" "+oddChars+"\n");
+            }
+        
+        sc.close();
+    }
+}
+
