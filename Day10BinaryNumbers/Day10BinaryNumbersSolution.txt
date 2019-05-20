@@ -1,0 +1,39 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        Scanner in = new Scanner(System.in);
+
+int counter = 0;
+int  max =0;
+/*
+To convert the given number n from base 10 to binary, divide the number by 2, and get the remainder. This problem has us finding the maximum number of consecutive 1s in the binary representation of the given number. So in this code, everytime the remainder is a 1, counter is incrementede by one, else, counter is reset to 0. Using the math.max method, we can then get the maximum number of times that counter is incremented.
+*/
+while (n > 0) {
+    int rem = n%2;
+    if (rem==1){
+        counter++;
+    }  
+    else {
+    counter=0;
+    }
+    max = Math.max(counter, max);
+    n/=2;
+}
+System.out.println(max);
+        scanner.close();
+    }
+}
