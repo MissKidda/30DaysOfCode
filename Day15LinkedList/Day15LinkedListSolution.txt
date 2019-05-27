@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+
+class Node {
+	int data;
+	Node next;
+	Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Solution {
+
+    public static  Node insert(Node head,int data) {
+        //Complete this method
+        //using recursion, we can iterate through the list, set the head, and add to the list
+
+   Node current = head;
+   //this checks if head is null. If it is, set current node to new note containing data, then set head to current node.
+    if(head==null){
+        current=new Node(data);
+       head=current;
+    }
+    //this checks if the head node has a next pointer. If it's null, it's the last node in the list, so the new data is set as the head node's next pointer
+    else if(head.next==null){
+        current.next=new Node(data);
+        head.next=current.next;
+    }
+   //base case, sets the current node's next pointer to data
+   else {
+       insert(current.next,data);
+   }
+return head;
+
+    }
+
+	public static void display(Node head) {
+        Node start = head;
+        while(start != null) {
+            System.out.print(start.data + " ");
+            start = start.next;
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        Node head = null;
+        int N = sc.nextInt();
+
+        while(N-- > 0) {
+            int ele = sc.nextInt();
+            head = insert(head,ele);
+        }
+        display(head);
+        sc.close();
+    }
+}
